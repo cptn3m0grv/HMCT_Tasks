@@ -7,22 +7,22 @@ provider "aws" {
 
 resource "aws_db_subnet_group" "default" {
 	    name = "main"
-	    subnet_ids = ["subnet-563f852d","subnet-ae1517c6","subnet-e53645a9"]
+	    subnet_ids = ["*","*","*"]
 	    tags = {
 	      Name = "my subnets"
 	    }
 	  
 }
 
-resource "aws_db_instance" "sqldb" {
+resource "aws_db_instance" "grv-t6-db" {
     engine = "mysql"
     engine_version = "5.7.30"
     instance_class = "db.t2.micro"
     allocated_storage = 10
     storage_type = "gp2"
-    name = "prodb"
-    username = "sachin"
-    password = "sachin123"
+    name = "wpdb"
+    username = "gaurav"
+    password = "redhat"
     port = "3306"
     publicly_accessible = true
     skip_final_snapshot = true
